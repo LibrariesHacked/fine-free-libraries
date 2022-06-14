@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Fine free libraries
 ---
 
 > &ldquo;We believe that moving to a completely free loan service will encourage more people to use their local library while offering a service that’s fit for purpose.&rdquo;<br/>**Sarah Curran, Trafford Libraries**
