@@ -33,10 +33,10 @@ social:
 url: 'https://www.finefreelibraries.uk'
 baseurl: ''
 title: 'Fine Free Libraries'
-description: 'Promoting open data and digital prototypes in libraries'
+description: 'Tracking and  promoting fine free libraries in the UK'
 permalink: pretty
-logo: '/assets/images/logo_small.png'
-repo: 'https://github.com/davebathnes/fine-free-libraries'
+logo:
+repo: 'https://github.com/librarieshacked/fine-free-libraries'
 email: 'info@librarieshacked.org'
 
 # Pagination
