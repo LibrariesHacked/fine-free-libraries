@@ -14,22 +14,7 @@ Fine free libraries is a project to promote libraries removing barriers to acces
 #libraryhexmap { height: 600px; width: 100%; }
 </style>
 
-
 <div id="libraryhexmap"></div>
 
-
 <script src="/assets/js/odi.hexmap.min.js"></script>
-
-<script>
-
-fetch('/assets/js/services.hexjson')
-    .then(response => response.json())
-    .then(hexdata => {
-        hex = new ODI.hexmap(document.getElementById('hexmap1'),{
-            'labels': { 'show': true },
-            'hexjson': hexdata
-        });
-    });
-    .catch(error => console.log(error));
-
-</script>
+<script src="/assets/js/hexmap.js"></script>
