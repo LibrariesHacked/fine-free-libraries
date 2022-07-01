@@ -47,10 +47,16 @@ paginate_path: blog/page:num
 navigation_header:
   - title: Home
     url: /
+  - title: Data
+    url: /data/
   - title: My Library
     url: /mylibrary/
   - title: About
     url: /about/
+  - title: Privacy
+    url: /privacy/
+  - title: Accessibility
+    url: /accessibility/
 
 # Collection settings
 defaults:
