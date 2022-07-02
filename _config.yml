@@ -47,13 +47,15 @@ paginate_path: blog/page:num
 navigation_header:
   - title: Home
     url: /
+  - title: Introduction
+    url: /introduction/
+  - title: My library
+    url: /my-library/
   - title: Data
     url: /data/
-  - title: My Library
-    url: /mylibrary/
-  - title: About
-    url: /about/
-  - title: Privacy
+
+navigation_footer:
+  - title: Privacy policy
     url: /privacy/
   - title: Accessibility
     url: /accessibility/
@@ -65,10 +67,6 @@ defaults:
       type: 'pages'
     values:
       layout: page # Set the default layout for pages
-
-navigation_footer:
-  - title: Created by Libraries Hacked
-    url: https://www.librarieshacked.org
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
   Twitter: https://twitter.com/LibrariesHacked
