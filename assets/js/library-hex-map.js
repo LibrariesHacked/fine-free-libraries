@@ -17,12 +17,10 @@ allData.then(res => {
     if (service) {
       var child_fine = service['Child fine']
       var adult_fine = service['Adult fine']
+      var fine_free = adult_fine === 0 && child_fine === 0
       hexdata.hexes[hexCode].child_fine = child_fine
       hexdata.hexes[hexCode].adult_fine = adult_fine
-      hexdata.hexes[hexCode].colour =
-        adult_fine === 0 && child_fine === 0
-          ? 'rgb(247, 171, 45)'
-          : 'rgb(211,211,211)'
+      hexdata.hexes[hexCode].colour = fine_free ? '#a5d6a7' : '#eceff1'
     }
   })
   hex = new ODI.hexmap(document.getElementById('libraryhexmap'), {
@@ -43,11 +41,23 @@ allData.then(res => {
         var adult_fine = attr.hex.adult_fine
         var fine_free = adult_fine === 0 && child_fine === 0
         var text_class = fine_free ? 'fine-free' : 'fine-paid'
+        var data_tippy_content = child_fine
         tspans =
-          '<tspan class="off ' + text_class + '">' + '&check;' + '</tspan>'
+          '<tspan data-tippy-content="' +
+          data_tippy_content +
+          '" class="hexdata ' +
+          text_class +
+          '">' +
+          (fine_free ? '&check;' : '') +
+          '</tspan>'
         return tspans
       }
     },
     hexjson: res[0]
+  })
+
+  tippy('#libraryhexmap .hex-cell', {
+    trigger: 'click',
+    content: reference => reference.getAttribute('title')
   })
 })
