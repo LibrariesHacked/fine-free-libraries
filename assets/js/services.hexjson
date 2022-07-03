@@ -2,7 +2,7 @@
 	"layout":"odd-r",
 	"hexes": {
 		"S12000013":{"n":"Na h-Eileanan Siar","q":9,"r":-8},
-		"N09000003":{"n":"Northern Ireland","q":9,"r":-16},
+		"N92000002":{"n":"LibrariesNI","q":9,"r":-16},
 		"E06000053":{"n":"Isles of Scilly","q":8,"r":-33},
 		"S12000035":{"n":"Argyll and Bute","q":12,"r":-11},
 		"S12000049":{"n":"Glasgow City","q":14,"r":-14},

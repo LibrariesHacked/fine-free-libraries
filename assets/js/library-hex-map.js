@@ -26,7 +26,28 @@ allData.then(res => {
     }
   })
   hex = new ODI.hexmap(document.getElementById('libraryhexmap'), {
-    labels: { show: true },
+    label: {
+      show: true, // Show a label
+      clip: true, // Make sure the label is clipped to the hexagon
+      // Define a function to format the hex labels
+      // It is passed:
+      //  * txt - a text string with the hex's name
+      //  * attr - an object containing:
+      //			.* size - the size in pixels
+      //			.* font-size - the font size in pixels
+      //			.* x - the horizontal position in pixels
+      //			.* y - the vertical position in pixels
+      //			.* hex - the hexagon's HexJSON properties
+      format: function (txt, attr) {
+        var child_fine = attr.hex.child_fine
+        var adult_fine = attr.hex.adult_fine
+        var fine_free = adult_fine === 0 && child_fine === 0
+        var text_class = fine_free ? 'fine-free' : 'fine-paid'
+        tspans =
+          '<tspan class="off ' + text_class + '">' + '&check;' + '</tspan>'
+        return tspans
+      }
+    },
     hexjson: res[0]
   })
 })
