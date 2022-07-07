@@ -47,7 +47,7 @@ paginate_path: blog/page:num
 navigation_header:
   - title: Home
     url: /
-  - title: Introduction
+  - title: Library fines introduction
     url: /introduction/
   - title: My library
     url: /my-library/
