@@ -4,7 +4,6 @@ layout: page
 feature_text: |
   ## Library fines
   An introduction to library fines from Ian Anstice of Public Libraries News
-feature_text: 
 ---
 
 Fines in public libraries were an unquestioned fact of life for over a century, possibly even since lending libraries began. It was something that obviously right and all-pervasive. But that is not the case now. Just like the other cliché of public librarians going shush, the stereotype of the book fine is becoming less true in library service after library service, country after country. So, why? And what are the reasons to fine or not to fine? 
