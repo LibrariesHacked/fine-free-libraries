@@ -1,7 +1,10 @@
 ---
-title: Library fines
-layout: post
-feature_text: An introduction to library fines from Ian Anstice of Public Libraries News
+title: The fine story so far
+layout: page
+feature_text: |
+  ## Library fines
+  An introduction to library fines from Ian Anstice of Public Libraries News
+feature_text: 
 ---
 
 Fines in public libraries were an unquestioned fact of life for over a century, possibly even since lending libraries began. It was something that obviously right and all-pervasive. But that is not the case now. Just like the other cliché of public librarians going shush, the stereotype of the book fine is becoming less true in library service after library service, country after country. So, why? And what are the reasons to fine or not to fine? 
@@ -17,3 +20,5 @@ Like the library’s opening hours notice on its front door, fines were therefor
 But such uniformity only exists until a library service breaks the mould. Arguments for going fines-free mainly focus around equality and trusting the customer. It’s argued that fines necessarily punish the poor far more than they would the wealthy. What’s an annoyance for the bourgeois represents the cause of anger, shame and parental shouts of “you’re not coming here again” among the poor. And once one library stopped doing fines, and reported that books were being returned on time nonetheless, for many the spell was broken. Trusting the customer turned out to be a workable strategy. And, in a world where there are far more alternatives to libraries than in Victorian times, with traditional usage falling, penalising remaining customers strikes an increasing number of library services as self-inflicted wounds. And, of course, it’s not as if fines free means nothing is charged. Return a book in the most fines-free of fines-free libraries and you’re still going to get charged, or have your usage limited in some way or another. 
 
 So now we’re in strange situation where numerous library services, even whole countries like Ireland, have gone fines-free and report no problems, even increased usage, while a greater number of others keep on charging. Indeed, recent debates amongst chief librarians are increasingly not about the wisdom or not of charging but rather how a library service can afford not to charge. The fines-free argument appears to have been won apart from the incredibly important bottom line. The trend at the moment is almost everywhere towards more reductions in fees. But recent times have shown us that assumptions cannot be trusted, and trends can be reversed. It may be that fining will soon be seen as eccentric in the future as not fining once was. Councils, and the reader, must make up their own minds. And library users, as ever, must return their books.
+
+{% include button.html text="Public Libraries News" link="https://www.publiclibrariesnews.com" %}
