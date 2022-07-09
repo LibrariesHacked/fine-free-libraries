@@ -1,8 +1,10 @@
 <div>
-    <label for="address-postcode">
+    <label for="postcode">
         Postcode
     </label>
-    <input id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+    <input id="postcode" name="address-postcode" type="text" maxlength="9" size="9" autocomplete="postal-code">
+    <p id="address-postcode-error" class="error"></p>
+    <button id="btnSearch" type="button">Search</button>
 </div>
 
 <script src="/assets/js/my-library.js"></script>

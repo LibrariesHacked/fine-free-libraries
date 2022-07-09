@@ -1,5 +1,5 @@
 ---
-title: The fine story so far
+title: The story so far
 layout: page
 feature_text: |
   ## Library fines
