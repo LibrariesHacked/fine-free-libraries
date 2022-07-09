@@ -62,21 +62,21 @@ $monospacetype: (
   }
 }
 
-#libraryhexmap {
+#div-library-hexmap {
   height: 800px;
   width: 100%;
 }
 
-#libraryhexmap .hex-cell {
+#div-library-hexmap .hex-cell {
   stroke: $white;
   stroke-width: 1;
 }
 
-#libraryhexmap .hex-label tspan.fine-free {
-  font-size: 12px;
+#div-library-hexmap .hex-label tspan {
+  font-size: 11px;
   font-weight: 700;
 }
 
-#libraryhexmap .hex-label {
-  fill: $hoverColour !important;
+#div-library-hexmap .hex-label {
+  fill: $linkColour !important;
 }
