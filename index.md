@@ -2,8 +2,8 @@
 title: Fine free libraries
 ---
 
-Fine free libraries is a project to promote and track libraries in the UK removing fines for overdue books.
+The aim of fine free libraries is to track the library services in the UK that remove fines for overdue books.
 
-{% include button.html text="Read an introduction to library fines" link="/introduction" %}
+Read [an introduction to library fines](/introduction) by Ian Anstice.
 
 {% include library-hex-map.html %}

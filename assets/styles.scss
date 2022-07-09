@@ -6,15 +6,15 @@ styles: true
 $backgroundColour: #ffffff !default;
 $codeBackgroundColour: #fafafa !default;
 $featureBackgroundColour: #f9fafa !default;
-$accentColour: #2196f3 !default;
+$accentColour: #607d8b !default;
 
 // Text colours
-$headingColour: #455a64 !default;
-$bodyColour: #455a64 !default;
-$linkColour: #2196f3 !default;
-$hoverColour: #1976d2 !default;
+$headingColour: #37474f !default;
+$bodyColour: #37474f !default;
+$linkColour: #607d8b !default;
+$hoverColour: #455a64 !default;
 $focusColour: #ff5722 !default;
-$captionColour: #607d8b !default;
+$captionColour: #616161 !default;
 $white: #ffffff !default;
 
 .typeset blockquote p {
@@ -23,7 +23,7 @@ $white: #ffffff !default;
 
 // Typography
 $bodytype: (
-  font-family: 'Roboto, serif',
+  font-family: '"Merriweather", sans-serif',
   regular: 400,
   bold: 700,
   italic: italic,
@@ -31,7 +31,7 @@ $bodytype: (
 ) !default;
 
 $headingtype: (
-  font-family: '"Roboto", serif',
+  font-family: '"Merriweather", sans-serif',
   regular: 400,
   bold: 700,
   cap-height: 0.75
@@ -44,3 +44,39 @@ $monospacetype: (
 ) !default;
 
 @import 'alembic';
+
+.footer {
+  background: $featureBackgroundColour;
+  color: $captionColour;
+  a {
+    color: $captionColour;
+    &:hover {
+      color: $captionColour;
+    }
+  }
+  .container {
+    @include flex-wrap(wrap);
+  }
+  .small {
+    padding-top: 0;
+  }
+}
+
+#libraryhexmap {
+  height: 800px;
+  width: 100%;
+}
+
+#libraryhexmap .hex-cell {
+  stroke: $white;
+  stroke-width: 1;
+}
+
+#libraryhexmap .hex-label tspan.fine-free {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#libraryhexmap .hex-label {
+  fill: $hoverColour !important;
+}
