@@ -62,4 +62,6 @@ allData.then(res => {
     },
     allowHTML: true
   })
+
+  document.getElementById('p-data-loading').style.display = 'none'
 })

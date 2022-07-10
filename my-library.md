@@ -2,6 +2,6 @@
 title: My library
 ---
 
-If you live in the UK this site provides a lookup to see the fine details from your library service. Enter your postcode and submit the form to see more information.
+Use this UK lookup to see the overdue fee details from your library service. Enter your postcode and submit the form.
 
 {% include my-library-form.html %}

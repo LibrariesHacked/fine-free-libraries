@@ -2,10 +2,8 @@
 title: Fine free libraries
 ---
 
-Tracking the overdue fines chargd by UK public libraries.
-
 Read [an introduction to library fines](/introduction) by Ian Anstice.
 
-{% include library-hex-map.html %}
+The library service map has a hexagon for each library service. Green shading with a check mark indicates that the service is fines free. Select a hexagon for further details. For a more accessible listing of the data, visit [the data](/data) page.
 
-For a more accessible version of the map, visit [the data](/data) page for a list of all UK library services, with their overdue fees.
+{% include library-hex-map.html %}
