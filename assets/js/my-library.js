@@ -1,29 +1,36 @@
 var serviceData = []
 var errorMessage = document.getElementById('search-error')
-
-fetch('https://api.librarydata.uk/services/airtable')
-  .then(response => response.json())
-  .then(services_data => {
-    var submitButton = document.getElementById('btn-search')
-    submitButton.addEventListener('click', submitPostcode)
-    serviceData = services_data
-    errorMessage.innerHTML = ''
-  })
-  .catch(
-    error =>
-      (errorMessage.innerHTML =
-        'Sorry, there was an error in loading required data. Please try again later.')
-  )
+var grid = null
 
 function submitPostcode () {
+  errorMessage.innerHTML = ''
   var postcode = document.getElementById('postcode').value
   if (/^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/.test(postcode.trim())) {
     var postcode_url =
       'https://api-geography.librarydata.uk/rest/postcodes/' + postcode
     fetch(postcode_url)
       .then(response => response.json())
-      .then(postcode_data => {
-        if (Object.keys(postcode_data).length > 0) {
+      .then(service_data => {
+        if (Object.keys(service_data).length > 0) {
+          var serviceCode = service_data['library_service']
+          var service = serviceData.find(
+            service => service['Code'] === serviceCode
+          )
+          var serviceGrid = [
+            [service['Name'], service['Child fine'], service['Adult fine']]
+          ]
+          if (service) {
+            if (grid) {
+              grid.updateConfig({ data: serviceGrid }).forceRender()
+            } else {
+              grid = new gridjs.Grid({
+                columns: ['Service', 'Child', 'Adult'],
+                pagination: false,
+                data: serviceGrid,
+                style: fineFree.tableStyle
+              }).render(document.getElementById('div-table-wrapper'))
+            }
+          }
         } else {
           errorMessage.innerHTML =
             'Sorry, we could not find data for that postcode.'
@@ -38,3 +45,18 @@ function submitPostcode () {
     errorMessage.innerHTML = 'Please enter a valid postcode'
   }
 }
+
+fetch('https://api.librarydata.uk/services/airtable')
+  .then(response => response.json())
+  .then(services_data => {
+    var submitButton = document.getElementById('btn-search')
+    submitButton.addEventListener('click', submitPostcode)
+    submitButton.disabled = false
+    serviceData = services_data
+    errorMessage.innerHTML = ''
+  })
+  .catch(
+    error =>
+      (errorMessage.innerHTML =
+        'Sorry, there was an error in loading required data. Please try again later.')
+  )

@@ -24,7 +24,8 @@ fetch('https://api.librarydata.uk/services/airtable')
       search: {
         selector: (cell, rowIndex, cellIndex) => (cellIndex === 0 ? cell : null)
       },
-      data: services
+      data: services,
+      style: fineFree.tableStyle
     }).render(document.getElementById('div-table-wrapper'))
   })
   .catch(error => console.log(error))
