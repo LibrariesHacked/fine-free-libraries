@@ -4,6 +4,9 @@ var fineFree = {
   isFineFree: function (child, adult) {
     return child == 0 && adult == 0
   },
-
-  bar: function () {}
+  formatMoney: function (child, adult, interval) {
+    var childFormatted = `£${child} per ${interval.toLowerCase()}`
+    var adultFormatted = `£${adult} per ${interval.toLowerCase()}`
+    return { child: childFormatted, adult: adultFormatted }
+  }
 }

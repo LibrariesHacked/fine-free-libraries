@@ -11,8 +11,10 @@ allData.then(res => {
     if (service) {
       var child = service['Child fine']
       var adult = service['Adult fine']
+      var interval = service['Fine interval']
       hexdata.hexes[hexCode].child = child
       hexdata.hexes[hexCode].adult = adult
+      hexdata.hexes[hexCode].interval = interval
       hexdata.hexes[hexCode].colour = fineFree.isFineFree(child, adult)
         ? '#a5d6a7'
         : '#eceff1'
@@ -45,13 +47,16 @@ allData.then(res => {
     content: reference => {
       var span = reference.querySelector('.hexdata')
       if (span && span.dataset.fineFree) {
-        var fineFree = span.dataset.fineFree === 'true'
-        var child = span.dataset.child
-        var adult = span.dataset.adult
+        var fineFreeLibrary = span.dataset.fineFree === 'true'
         var service = span.dataset.service
-        var finePopup = `<div><h2>${service}</h2>${child} child fine<br/>${adult} adult fine</div>`
-        var fineFreePopup = `<div><h2>${service}</h2>Fine free</div>`
-        return fineFree ? fineFreePopup : finePopup
+        var formatted = fineFree.formatMoney(
+          span.dataset.child,
+          span.dataset.adult,
+          span.dataset.interval
+        )
+        var finePopup = `<div><strong>${service}</strong><br/>${formatted.child} child fine<br/>${formatted.adult} adult fine</div>`
+        var fineFreePopup = `<div><strong>${service}</strong><br/>Fine free</div>`
+        return fineFreeLibrary ? fineFreePopup : finePopup
       }
       return null
     },
