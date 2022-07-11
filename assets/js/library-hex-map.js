@@ -55,7 +55,7 @@ allData.then(res => {
           span.dataset.interval
         )
         var finePopup = `<div><strong>${service}</strong><br/>${formatted.child} child fine<br/>${formatted.adult} adult fine</div>`
-        var fineFreePopup = `<div><strong>${service}</strong><br/>Fine free</div>`
+        var fineFreePopup = `<div><strong>${service}</strong><br/>Fine-free</div>`
         return fineFreeLibrary ? fineFreePopup : finePopup
       }
       return null

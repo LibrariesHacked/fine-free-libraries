@@ -6,8 +6,7 @@ function submitPostcode () {
   errorMessage.innerHTML = ''
   var postcode = document.getElementById('postcode').value
   if (/^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/.test(postcode.trim())) {
-    var postcode_url =
-      'https://api-geography.librarydata.uk/rest/postcodes/' + postcode
+    var postcode_url = `https://api-geography.librarydata.uk/rest/postcodes/${postcode}`
     fetch(postcode_url)
       .then(response => response.json())
       .then(service_data => {
@@ -16,18 +15,21 @@ function submitPostcode () {
           var service = serviceData.find(
             service => service['Code'] === serviceCode
           )
+          var child = service['Child fine']
+          var adult = service['Adult fine']
+          var interval = service['Fine interval']
+          var formattedFines = fineFree.formatFines(child, adult, interval)
           var serviceGrid = [
-            [service['Name'], service['Child fine'], service['Adult fine']]
+            [service['Name'], formattedFines.child, formattedFines.adult]
           ]
           if (service) {
             if (grid) {
               grid.updateConfig({ data: serviceGrid }).forceRender()
             } else {
               grid = new gridjs.Grid({
-                columns: ['Service', 'Child', 'Adult'],
+                columns: ['Service', 'Child fine', 'Adult fine'],
                 pagination: false,
-                data: serviceGrid,
-                style: fineFree.tableStyle
+                data: serviceGrid
               }).render(document.getElementById('div-table-wrapper'))
             }
           }

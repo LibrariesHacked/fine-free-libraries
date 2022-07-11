@@ -61,6 +61,8 @@ navigation_footer:
     url: /privacy/
   - title: Accessibility
     url: /accessibility/
+  - title: About
+    url: /about/
 
 # Collection settings
 defaults:
