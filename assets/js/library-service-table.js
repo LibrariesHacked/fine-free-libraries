@@ -1,6 +1,6 @@
 var serviceData = []
 
-fetch('https://api.librarydata.uk/services/airtable')
+fetch(fineFree.services)
   .then(response => response.json())
   .then(services_data => {
     var services = services_data
@@ -13,13 +13,12 @@ fetch('https://api.librarydata.uk/services/airtable')
         return [service['Name'], formattedFines.child, formattedFines.adult]
       })
     new gridjs.Grid({
-      columns: ['Service', 'Child', 'Adult'],
+      columns: ['Service', 'Child fine', 'Adult fine'],
       pagination: true,
       search: {
         selector: (cell, rowIndex, cellIndex) => (cellIndex === 0 ? cell : null)
       },
-      data: services,
-      style: fineFree.tableStyle
+      data: services
     }).render(document.getElementById('div-table-wrapper'))
   })
   .catch(error => console.log(error))
