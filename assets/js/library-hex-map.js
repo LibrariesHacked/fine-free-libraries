@@ -49,7 +49,7 @@ allData.then(res => {
       if (span && span.dataset.fineFree) {
         var fineFreeLibrary = span.dataset.fineFree === 'true'
         var service = span.dataset.service
-        var formatted = fineFree.formatMoney(
+        var formatted = fineFree.formatFines(
           span.dataset.child,
           span.dataset.adult,
           span.dataset.interval

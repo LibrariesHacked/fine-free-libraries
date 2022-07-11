@@ -4,10 +4,19 @@ var fineFree = {
   isFineFree: function (child, adult) {
     return child == 0 && adult == 0
   },
-  formatMoney: function (child, adult, interval) {
-    var childFormatted = `£${child} per ${interval.toLowerCase()}`
-    var adultFormatted = `£${adult} per ${interval.toLowerCase()}`
+  formatFines: function (child, adult, interval) {
+    var childFormatted = 'Unknown'
+    var adultFormatted = 'Unknown'
+    if (child) childFormatted = `${this.formatAmount(child)} a ${interval.toLowerCase()}`
+    if (adult) adultFormatted = `£${adult} a ${interval.toLowerCase()}`
     return { child: childFormatted, adult: adultFormatted }
+  },
+  formatAmount: function (amount) {
+    if (amount < 1) {
+      return `${(parseFloat(amount) * 100)}p`
+    } else {
+      return `£${parseFloat(amount).toFixed(2)}`
+    }
   },
   tableStyle: {
     table: {

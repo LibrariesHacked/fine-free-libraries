@@ -6,17 +6,11 @@ fetch('https://api.librarydata.uk/services/airtable')
     var services = services_data
       .sort((a, b) => a['Name'].localeCompare(b['Name']))
       .map(service => {
-        var child_fine_amount = service['Child fine']
-        var child_fine = child_fine_amount > 0
-        var child_fine_text = child_fine
-          ? child_fine_amount + ' / ' + service['Fine interval']
-          : 'None'
-        var adult_fine_amount = service['Adult fine']
-        var adult_fine = adult_fine_amount > 0
-        var adult_fine_text = adult_fine
-          ? adult_fine_amount + ' / ' + service['Fine interval']
-          : 'None'
-        return [service['Name'], child_fine_text, adult_fine_text]
+        var child = service['Child fine']
+        var adult = service['Adult fine']
+        var interval = service['Fine interval']
+        var formattedFines = fineFree.formatFines(child, adult, interval)
+        return [service['Name'], formattedFines.child, formattedFines.adult]
       })
     new gridjs.Grid({
       columns: ['Service', 'Child', 'Adult'],
