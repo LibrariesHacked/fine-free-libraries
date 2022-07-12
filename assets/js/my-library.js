@@ -32,6 +32,10 @@ function submitPostcode () {
                 data: serviceGrid
               }).render(document.getElementById('div-table-wrapper'))
             }
+            var fineInfo = document.getElementById('p-fine-info')
+            var estimateFamilyWeeklyFine = fineFree.estimateFamilyWeeklyFine(child, adult, interval)
+            
+            fineInfo.innerText = `A family of 2 adults and 2 children returning books a week late would need to pay £${estimateFamilyWeeklyFine}.`
           }
         } else {
           errorMessage.innerHTML =
