@@ -1,6 +1,7 @@
 var fineFree = {
   hexJson: '/assets/js/services.hexjson',
   services: 'https://api.librarydata.uk/services/airtable',
+  postcodes: 'https://api-geography.librarydata.uk/rest/postcodes',
   isFineFree: function (child, adult) {
     return child == 0 && adult == 0
   },
@@ -32,22 +33,78 @@ var fineFree = {
   estimateFamilyWeeklyFine: function (child, adult, interval) {
     var childNumber = parseFloat(child)
     var adultNumber = parseFloat(adult)
-    if (!isNaN(childNumber) && !isNaN(adultNumber)){
-      var total = 0;
-      if (childNumber > 0) total += (childNumber * 2)
-      if (adultNumber > 0) total += (adultNumber * 2)
-      if (interval == 'Day') total = (total * 7)
-      return total
+    if (!isNaN(childNumber) && !isNaN(adultNumber)) {
+      var total = 0
+      if (childNumber > 0) total += childNumber * 2
+      if (adultNumber > 0) total += adultNumber * 2
+      if (interval == 'Day') total = total * 7
+      return {
+        total: total,
+        example: total > 0 ? this.getExample(total) : null
+      }
     } else {
       return null
     }
   },
+  getExample: function (amount) {
+    var exampleCost = null
+    this.exampleCosts.forEach(example => {
+      if (example.itemCost < amount) {
+        exampleCost = example
+      }
+    })
+    return exampleCost
+  },
   exampleCosts: [
-    { itemCost: '0.79', itemName: 'a pint of milk for a family to share.', source: 'https://www.water.org.uk/news-item/average-water-and-sewerage-bills-for-england-and-wales-to-fall-by-17-in-2020-21/' },
-    { itemCost: '1.00', itemName: 'water bills for a day.', source: 'https://www.water.org.uk/news-item/average-water-and-sewerage-bills-for-england-and-wales-to-fall-by-17-in-2020-21/' },
-    { itemCost: '6.58', itemName: 'nappies for a baby to last a week.', source: 'https://www.babiesandchildren.co.uk/baby-nappies-cost/' },
-    { itemCost: '11.70', itemName: 'school meals for a child for a week.', source: 'https://www.bigissue.com/news/social-justice/free-school-meals-everything-you-need-to-know/' },
-    { itemCost: '13.25', itemName: 'TV licensing costs for a month', source: 'https://www.nimblefins.co.uk/average-uk-household-cost-food' },
-    { itemCost: '14.14', itemName: 'food for a family of 4 for a day.', source: 'https://www.nimblefins.co.uk/average-uk-household-cost-food' },
+    {
+      itemCost: 0.34,
+      itemDescription: 'running a single load of clothes washing.',
+      source:
+        'https://inthewash.co.uk/laundry-and-ironing/cost-to-wash-clothes-uk/'
+    },
+    {
+      itemCost: 0.79,
+      itemDescription: 'a pint of milk for a family to have breakfast.',
+      source:
+        'https://www.water.org.uk/news-item/average-water-and-sewerage-bills-for-england-and-wales-to-fall-by-17-in-2020-21/'
+    },
+    {
+      itemCost: 1.0,
+      itemDescription: 'running water for a day.',
+      source:
+        'https://www.water.org.uk/news-item/average-water-and-sewerage-bills-for-england-and-wales-to-fall-by-17-in-2020-21/'
+    },
+    {
+      itemCost: 2.41,
+      itemDescription: 'a school meal for a child.',
+      source:
+        'https://www.bigissue.com/news/social-justice/free-school-meals-everything-you-need-to-know/'
+    },
+    {
+      itemCost: 2.8,
+      itemDescription: 'a family meal of tomato soup.',
+      source: 'https://www.tesco.com/groceries/en-GB/products/258147391'
+    },
+    {
+      itemCost: 6.58,
+      itemDescription: 'nappies for a baby to last a week.',
+      source: 'https://www.babiesandchildren.co.uk/baby-nappies-cost/'
+    },
+    {
+      itemCost: 11.7,
+      itemDescription: 'school meals for a child for a week.',
+      source:
+        'https://www.bigissue.com/news/social-justice/free-school-meals-everything-you-need-to-know/'
+    },
+    {
+      itemCost: 13.25,
+      itemDescription: 'TV licensing costs for one month.',
+      source: 'https://www.nimblefins.co.uk/average-uk-household-cost-food'
+    },
+    {
+      itemCost: 14.14,
+      itemDescription: 'food for a family for one day.',
+      source: 'https://www.nimblefins.co.uk/average-uk-household-cost-food'
+    }
   ]
 }

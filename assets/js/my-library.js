@@ -1,41 +1,56 @@
 var serviceData = []
 var errorMessage = document.getElementById('search-error')
+var fineInfo = document.getElementById('p-fine-info')
+var fineExample = document.getElementById('p-fine-example')
+var serviceHeader = document.getElementById('h-library-service')
 var grid = null
 
 function submitPostcode () {
   errorMessage.innerHTML = ''
-  var postcode = document.getElementById('postcode').value
+  var postcode = document
+    .getElementById('postcode')
+    .value.trim()
+    .toUpperCase()
   if (/^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/.test(postcode.trim())) {
-    var postcode_url = `https://api-geography.librarydata.uk/rest/postcodes/${postcode}`
+    var postcode_url = `${fineFree.postcodes}/${postcode}`
     fetch(postcode_url)
       .then(response => response.json())
       .then(service_data => {
         if (Object.keys(service_data).length > 0) {
+          serviceHeader.innerText = ``
+          fineInfo.innerHTML = ``
+          fineExample.innerHTML = ``
           var serviceCode = service_data['library_service']
           var service = serviceData.find(
             service => service['Code'] === serviceCode
           )
-          var child = service['Child fine']
-          var adult = service['Adult fine']
-          var interval = service['Fine interval']
-          var formattedFines = fineFree.formatFines(child, adult, interval)
-          var serviceGrid = [
-            [service['Name'], formattedFines.child, formattedFines.adult]
-          ]
+
           if (service) {
-            if (grid) {
-              grid.updateConfig({ data: serviceGrid }).forceRender()
+            var child = service['Child fine']
+            var adult = service['Adult fine']
+            var interval = service['Fine interval']
+            var serviceName = service['Name']
+            var formattedFines = fineFree.formatFines(child, adult, interval)
+
+            var estimateFamilyWeeklyFine = fineFree.estimateFamilyWeeklyFine(
+              child,
+              adult,
+              interval
+            )
+            serviceHeader.innerText = serviceName
+
+            if (estimateFamilyWeeklyFine.total > 0) {
+              fineInfo.innerHTML = `${serviceName} charge <strong>${formattedFines.child}</strong> fines for children and <strong>${formattedFines.adult}</strong> fines for adults.`
+              fineExample.innerHTML = `A family of 4 would pay <strong>£${estimateFamilyWeeklyFine.total.toFixed(
+                2
+              )}</strong> if they were overdue by a week. That could cover the cost of ${
+                estimateFamilyWeeklyFine.example.itemDescription
+              }`
+            } else if (estimateFamilyWeeklyFine.total == 0) {
+              fineInfo.innerHTML = `${serviceName} are a fine-free library service.`
             } else {
-              grid = new gridjs.Grid({
-                columns: ['Service', 'Child fine', 'Adult fine'],
-                pagination: false,
-                data: serviceGrid
-              }).render(document.getElementById('div-table-wrapper'))
+              fineInfo.innerHTML = `No current info on ${serviceName}`
             }
-            var fineInfo = document.getElementById('p-fine-info')
-            var estimateFamilyWeeklyFine = fineFree.estimateFamilyWeeklyFine(child, adult, interval)
-            
-            fineInfo.innerText = `A family of 2 adults and 2 children returning books a week late would need to pay £${estimateFamilyWeeklyFine}.`
           }
         } else {
           errorMessage.innerHTML =
@@ -52,7 +67,7 @@ function submitPostcode () {
   }
 }
 
-fetch('https://api.librarydata.uk/services/airtable')
+fetch(fineFree.services)
   .then(response => response.json())
   .then(services_data => {
     var submitButton = document.getElementById('btn-search')
