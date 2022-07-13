@@ -57,12 +57,12 @@ navigation_header:
     url: /data/
 
 navigation_footer:
-  - title: Privacy policy
-    url: /privacy/
-  - title: Accessibility
-    url: /accessibility/
   - title: About
     url: /about/
+  - title: Accessibility
+    url: /accessibility/
+  - title: Privacy policy
+    url: /privacy/
 
 # Collection settings
 defaults:

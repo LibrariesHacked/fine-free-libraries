@@ -55,6 +55,11 @@ var fineFree = {
     })
     return exampleCost
   },
+  getTweetText: function (amount) {
+    if (amount == 0) return this.tweetText.noFines
+    if (amount < 5) return this.tweetText.smallFines
+    return this.tweetText.largeFines
+  },
   exampleCosts: [
     {
       itemCost: 0.34,
@@ -106,5 +111,24 @@ var fineFree = {
       itemDescription: 'food for a family for one day.',
       source: 'https://www.nimblefins.co.uk/average-uk-household-cost-food'
     }
-  ]
+  ],
+  tweetText: {
+    noFines: {
+      tweetIntroduction:
+        "It's great your library doesn't charge fines. Consider tweeting a thank you to the service, and promote others going fine-free.",
+      tweetText: 'Thank you to my library for being fine free.'
+    },
+    largeFines: {
+      tweetIntroduction:
+        'These are large fines that will affect poorer users. Consider tweeting to the service to encourage them to lower fines or go fine-free.',
+      tweetText:
+        'Please consider removing or reducing library fines, which affect poorer users and create a barrier to using libraries.'
+    },
+    smallFines: {
+      tweetIntroduction:
+        'Although not huge, these fines could stop poorer users from using libraries. Consider tweeting to the service to encourage them to remove fines.',
+      tweetText:
+        'Please consider removing library fines which create a barrier to using libraries.'
+    }
+  }
 }
