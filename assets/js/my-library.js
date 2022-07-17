@@ -6,7 +6,6 @@ var fineInfo = document.getElementById('p-fine-info')
 var fineExample = document.getElementById('p-fine-example')
 var tweetIntroText = document.getElementById('p-tweet-text')
 var tweetLink = document.getElementById('a-tweet')
-tweetLink.addEventListener('click', tweetLibraryService)
 
 var grid = null
 
@@ -77,9 +76,12 @@ function submitPostcode () {
             tweetIntroText.innerText = tweetText.tweetIntroduction
             tweetIntroText.style.display = 'block'
 
-            tweetLink.dataset.related = service['Twitter handle']
-            tweetLink.dataset.text = tweetText.tweetText
             tweetLink.style.display = 'inline'
+            var tweetLinkText = `@${service['Twitter handle']} ${tweetText.tweetText}\n\nvia https://www.finefreelibraries.co.uk`
+            var tweetLinkUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+              tweetLinkText
+            )} `
+            tweetLink.href = tweetLinkUrl
           }
         } else {
           errorMessage.innerHTML =
@@ -94,16 +96,6 @@ function submitPostcode () {
   } else {
     errorMessage.innerHTML = 'Please enter a valid postcode'
   }
-}
-
-function tweetLibraryService (e) {
-  e.preventDefault()
-  var tweetText = `${tweetLink.dataset.text}\n\n@${tweetLink.dataset.related}`
-  var url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    tweetText
-  )} via https://www.finefreelibraries.co.uk`
-  window.open(url, '_blank')
-  return false
 }
 
 fetch(fineFree.services)

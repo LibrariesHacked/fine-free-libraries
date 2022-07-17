@@ -13,7 +13,7 @@ fetch(fineFree.services)
         return [service['Name'], formattedFines.child, formattedFines.adult]
       })
     new gridjs.Grid({
-      columns: ['Service', 'Child fine', 'Adult fine'],
+      columns: ['Service', 'Child', 'Adult'],
       pagination: true,
       search: {
         selector: (cell, rowIndex, cellIndex) => (cellIndex === 0 ? cell : null)
