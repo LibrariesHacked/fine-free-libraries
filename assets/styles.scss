@@ -13,7 +13,7 @@ $headingColour: #37474f !default;
 $bodyColour: #455a64 !default;
 $linkColour: #546e7a !default;
 $hoverColour: #455a64 !default;
-$focusColour: #ff5722 !default;
+$focusColour: #bf360c !default;
 $captionColour: #616161 !default;
 $white: #ffffff !default;
 
@@ -26,7 +26,7 @@ $neutralGrey: #eceff1 !default;
 
 // Typography
 $bodytype: (
-  font-family: '"Merriweather", sans-serif',
+  font-family: '"PT Sans", sans-serif',
   regular: 400,
   bold: 700,
   italic: italic,
@@ -34,7 +34,7 @@ $bodytype: (
 ) !default;
 
 $headingtype: (
-  font-family: '"Merriweather", sans-serif',
+  font-family: '"PT Sans", sans-serif',
   regular: 400,
   bold: 700,
   cap-height: 0.75
