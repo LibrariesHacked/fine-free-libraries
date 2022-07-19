@@ -42,7 +42,7 @@ allData.then(res => {
     hexjson: res[0]
   })
 
-  tippy('#div-library-hexmap svg g', {
+  tippy('#div-library-hexmap .hexmap-inner svg g', {
     trigger: 'click',
     content: reference => {
       var span = reference.querySelector('.hexdata')
@@ -54,8 +54,8 @@ allData.then(res => {
           span.dataset.adult,
           span.dataset.interval
         )
-        var finePopup = `<div><strong>${service}</strong><br/>${formatted.child} child fine<br/>${formatted.adult} adult fine</div>`
-        var fineFreePopup = `<div><strong>${service}</strong><br/>Fine-free</div>`
+        var finePopup = `<div class="div-fine"><span class="span-service">${service}</span><br/><span class="span-fine-amount">${formatted.child}</span> child fine<br/><span class="span-fine-amount">${formatted.adult}</span> adult fine</div>`
+        var fineFreePopup = `<div class="div-fine-free"><span class="span-service">${service}</span><br/>Fine-free</div>`
         return fineFreeLibrary ? fineFreePopup : finePopup
       }
       return null

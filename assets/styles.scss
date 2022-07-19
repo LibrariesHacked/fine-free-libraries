@@ -68,20 +68,36 @@ $monospacetype: (
 #div-library-hexmap {
   height: 800px;
   width: 100%;
+
+  .hex-cell {
+    stroke: $white;
+    stroke-width: 1px;
+
+    &.hover {
+      stroke-width: 2px;
+    }
+  }
+
+  .hex-label {
+    fill: $linkColour !important;
+    tspan {
+      font-size: 11px;
+      font-weight: 700;
+    }
+  }
 }
 
-#div-library-hexmap .hex-cell {
-  stroke: $white;
-  stroke-width: 1;
-}
+/* Popup styles */
 
-#div-library-hexmap .hex-label tspan {
-  font-size: 11px;
-  font-weight: 700;
-}
-
-#div-library-hexmap .hex-label {
-  fill: $linkColour !important;
+.div-fine-free,
+.div-fine {
+  .span-service {
+    font-size: 18px;
+    font-weight: 700 !important;
+  }
+  .span-fine-amount {
+    font-weight: 700 !important;
+  }
 }
 
 /* Table styles */
