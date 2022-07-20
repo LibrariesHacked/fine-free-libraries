@@ -59,8 +59,8 @@ var fineFree = {
   },
   getTweetText: function (estimateFamilyWeeklyFine) {
     if (estimateFamilyWeeklyFine === undefined || estimateFamilyWeeklyFine === null) return this.tweetText.noInformation
-    if (estimateFamilyWeeklyFine.total.amount == 0) return this.tweetText.noFines
-    if (estimateFamilyWeeklyFine.total.amount < 5) return this.tweetText.smallFines
+    if (estimateFamilyWeeklyFine.total == 0) return this.tweetText.noFines
+    if (estimateFamilyWeeklyFine.total < 5) return this.tweetText.smallFines
     return this.tweetText.largeFines
   },
   exampleCosts: [
@@ -154,7 +154,7 @@ var fineFree = {
     },
     noInformation: {
       tweetIntroduction:
-        "We don't have fine information for your library. This is normally due to poor website contact and then also not responding to queries. Consider tweeting to the service to encourage them to publish information on their fine policies.",
+        "We don't have fine information for your library. This is normally due to poor website content, and not responding to queries. Consider tweeting to the service to encourage them to publish information on their fine policies.",
       tweetText:
         'please consider publishing your library fine policies. This will help get a better picture across the UK.'
     }
