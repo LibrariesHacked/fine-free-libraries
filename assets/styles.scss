@@ -130,7 +130,6 @@ $monospacetype: (
     width: 100%;
     z-index: 5;
     padding: 12px 24px;
-    border-top: 1px solid $linkColour;
     background-color: $white;
     border-radius: 0 0 8px 8px;
     border-bottom-width: 1px;
@@ -381,6 +380,7 @@ th.gridjs {
       overflow: hidden;
       width: 100%;
       float: left;
+      font-weight: 700;
     }
 
     &-sort {
@@ -445,9 +445,9 @@ th.gridjs {
     -moz-osx-font-smoothing: grayscale;
     border-radius: 4px 4px 0 0;
     display: block;
-
-    border-top-width: 1px;
     border-color: $neutralGrey;
+    border-style: solid;
+    border-width: 1px;
   }
 
   &-wrapper:nth-last-of-type(2) {
