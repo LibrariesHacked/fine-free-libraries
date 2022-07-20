@@ -18,12 +18,12 @@ We've also made the website text as simple as possible to understand.
 
 We know some parts of this website are not fully accessible:
 
-- The map on the home page is not fully accessible. The information on library service fines is made available on the data page, and this is signposted on the home page.
+- The map on the home page is not fully accessible. The information on library service fines is made available on the data page, and this is signposted on the home page as an alternative.
 
 ### Technical information about this website's accessibility
 
 This website has been manually tested using the guide published by the Government Digital Service, [doing a basic accessibility check](https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one).
 
-The site is also checked using WAVE, an online web accessibility evaluation tool.
+The site has also been checked using WAVE, an online web accessibility evaluation tool.
 
 If you do experience any problems using this website, please do raise these and [send us an email](mailto:info@librarieshacked.org).

@@ -10,7 +10,7 @@ Deployed using GitHub pages. Github should automatically deploy and build the si
 
 * [Jekyll](https://jekyllrb.com/) - The web framework used for creating static sites
 * [Alembic](https://alembic.darn.es/) - Remote Jekyll theme
-* [ODI Leeds Hexmap library](https://odileeds.github.io/odi.hexmap.js/) - Remote Jekyll theme
+* [Open Innovation's Hexmap library](https://open-innovations.github.io/oi.hexmap.js/) - Remote Jekyll theme
 
 ## Authors
 
@@ -27,6 +27,6 @@ Additional site code here is also published under the [MIT Licence](/LICENSE).
 ## Acknowledgments
 
 - Ian Anstice from [Public Libraries News](https://www.publiclibrariesnews.com/) for his excellent [introduction to library fines](/introduction).
-- ODI Leeds who developed the [Hexmap library](https://odileeds.github.io/odi.hexmap.js/) used in this site to visualise library services.
+- Open Innovations who developed the [Hexmap library](https://open-innovations.github.io/oi.hexmap.js/) used in this site to visualise library services.
 - David Darnes who created the [Alembic Jekyll theme](https://alembic.darn.es/) which this site builds upon.
 * All the Jekyll contributors
