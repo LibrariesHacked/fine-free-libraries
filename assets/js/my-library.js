@@ -48,7 +48,7 @@ function submitPostcode() {
             serviceHeader.style.display = 'block'
             fineInfo.style.display = 'block'
 
-            if (formattedFines) {
+            if (estimateFamilyWeeklyFine) {
               
               if (estimateFamilyWeeklyFine.total > 0) {
                 fineInfo.innerHTML = `${serviceName} charge <strong>${formattedFines.child}</strong> fines for children and <strong>${formattedFines.adult}</strong> fines for adults.`

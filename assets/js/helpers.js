@@ -58,9 +58,9 @@ var fineFree = {
     return exampleCost
   },
   getTweetText: function (estimateFamilyWeeklyFine) {
-    if (!estimateFamilyWeeklyFine) return this.tweetText.noInformation
-    if (estimateFamilyWeeklyFine.amount == 0) return this.tweetText.noFines
-    if (estimateFamilyWeeklyFine.amount < 5) return this.tweetText.smallFines
+    if (estimateFamilyWeeklyFine === undefined || estimateFamilyWeeklyFine === null) return this.tweetText.noInformation
+    if (estimateFamilyWeeklyFine.total.amount == 0) return this.tweetText.noFines
+    if (estimateFamilyWeeklyFine.total.amount < 5) return this.tweetText.smallFines
     return this.tweetText.largeFines
   },
   exampleCosts: [
