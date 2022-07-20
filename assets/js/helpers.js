@@ -57,15 +57,16 @@ var fineFree = {
     })
     return exampleCost
   },
-  getTweetText: function (amount) {
-    if (amount == 0) return this.tweetText.noFines
-    if (amount < 5) return this.tweetText.smallFines
+  getTweetText: function (estimateFamilyWeeklyFine) {
+    if (!estimateFamilyWeeklyFine) return this.tweetText.noInformation
+    if (estimateFamilyWeeklyFine.amount == 0) return this.tweetText.noFines
+    if (estimateFamilyWeeklyFine.amount < 5) return this.tweetText.smallFines
     return this.tweetText.largeFines
   },
   exampleCosts: [
     {
       itemCost: 0.34,
-      itemDescription: 'running a single load of clothes washing.',
+      itemDescription: 'water and energy for a single load of clothes washing.',
       source:
         'https://inthewash.co.uk/laundry-and-ironing/cost-to-wash-clothes-uk/'
     },
@@ -76,7 +77,7 @@ var fineFree = {
     },
     {
       itemCost: 1.0,
-      itemDescription: 'running water for a day.',
+      itemDescription: 'running water for a household for one day.',
       source:
         'https://www.water.org.uk/news-item/average-water-and-sewerage-bills-for-england-and-wales-to-fall-by-17-in-2020-21/'
     },
@@ -95,6 +96,11 @@ var fineFree = {
       itemCost: 3.3,
       itemDescription: 'a box of crunchy nut cornflakes.',
       source: 'https://www.tesco.com/groceries/en-GB/products/256267349'
+    },
+    {
+      itemCost: 4.00,
+      itemDescription: 'a refill pack for a jar of Kenco instant coffee.',
+      source: 'https://www.tesco.com/groceries/en-GB/products/265314701'
     },
     {
       itemCost: 5.6,
@@ -145,6 +151,12 @@ var fineFree = {
         'These fines could discourage poorer users from using libraries. Consider tweeting to the service to encourage them to remove fines.',
       tweetText:
         'please consider removing library fines which create a barrier to using libraries.'
+    },
+    noInformation: {
+      tweetIntroduction:
+        "We don't have fine information for your library. This is normally due to poor website contact and then also not responding to queries. Consider tweeting to the service to encourage them to publish information on their fine policies.",
+      tweetText:
+        'please consider publishing your library fine policies. This will help get a better picture across the UK.'
     }
   }
 }

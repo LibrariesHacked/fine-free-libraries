@@ -9,7 +9,7 @@ var tweetLink = document.getElementById('a-tweet')
 
 var grid = null
 
-function submitPostcode () {
+function submitPostcode() {
   errorMessage.innerHTML = ''
   var postcode = document
     .getElementById('postcode')
@@ -46,42 +46,49 @@ function submitPostcode () {
             )
             serviceHeader.innerText = serviceName
             serviceHeader.style.display = 'block'
-
             fineInfo.style.display = 'block'
-            if (estimateFamilyWeeklyFine.total > 0) {
-              fineInfo.innerHTML = `${serviceName} charge <strong>${formattedFines.child}</strong> fines for children and <strong>${formattedFines.adult}</strong> fines for adults.`
-              fineExample.innerHTML = `A family of 4 would pay <strong>£${estimateFamilyWeeklyFine.total.toFixed(
-                2
-              )}</strong> if they were overdue by a week. That could cover the cost of ${
-                estimateFamilyWeeklyFine.example.itemDescription
-              }`
-              fineExample.style.display = 'block'
-            } else if (estimateFamilyWeeklyFine.total == 0) {
-              fineInfo.innerHTML = `${serviceName} do not charge overdue fines.`
+
+            if (formattedFines) {
+              
+              if (estimateFamilyWeeklyFine.total > 0) {
+                fineInfo.innerHTML = `${serviceName} charge <strong>${formattedFines.child}</strong> fines for children and <strong>${formattedFines.adult}</strong> fines for adults.`
+                fineExample.innerHTML = `A family of 4 would pay <strong>£${estimateFamilyWeeklyFine.total.toFixed(
+                  2
+                )}</strong> if they were overdue by a week. That could cover the cost of ${estimateFamilyWeeklyFine.example.itemDescription
+                  }`
+                fineExample.style.display = 'block'
+              } else if (estimateFamilyWeeklyFine.total == 0) {
+                fineInfo.innerHTML = `${serviceName} do not charge overdue fines.`
+              } else {
+                fineInfo.innerHTML = `No current info on ${serviceName}`
+              }
             } else {
+              // Probably no fines data for that services
               fineInfo.innerHTML = `No current info on ${serviceName}`
             }
-          }
 
-          var twitterHandle = service['Twitter handle']
-          if (
-            twitterHandle &&
-            twitterHandle.length > 0 &&
-            estimateFamilyWeeklyFine
-          ) {
-            // Tweet button code
-            var tweetText = fineFree.getTweetText(
-              estimateFamilyWeeklyFine.total
-            )
-            tweetIntroText.innerText = tweetText.tweetIntroduction
-            tweetIntroText.style.display = 'block'
+            var twitterHandle = service['Twitter handle']
+            if (
+              twitterHandle &&
+              twitterHandle.length > 0
+            ) {
+              // Tweet button code
+              var tweetText = fineFree.getTweetText(
+                estimateFamilyWeeklyFine
+              )
+              tweetIntroText.innerText = tweetText.tweetIntroduction
+              tweetIntroText.style.display = 'block'
 
-            tweetLink.style.display = 'inline'
-            var tweetLinkText = `@${service['Twitter handle']} ${tweetText.tweetText}\n\nvia https://www.finefreelibraries.co.uk`
-            var tweetLinkUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-              tweetLinkText
-            )} `
-            tweetLink.href = tweetLinkUrl
+              tweetLink.style.display = 'inline'
+              var tweetLinkText = `@${service['Twitter handle']} ${tweetText.tweetText}\n\nvia https://www.finefreelibraries.co.uk`
+              var tweetLinkUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                tweetLinkText
+              )} `
+              tweetLink.href = tweetLinkUrl
+            }
+          } else {
+            errorMessage.innerHTML =
+              'Sorry, we could not find data for that postcode.'
           }
         } else {
           errorMessage.innerHTML =
@@ -90,8 +97,8 @@ function submitPostcode () {
       })
       .catch(
         error =>
-          (errorMessage.innerHTML =
-            'Sorry, something went wrong. Please try again later.')
+        (errorMessage.innerHTML =
+          'Sorry, something went wrong. Please try again later.')
       )
   } else {
     errorMessage.innerHTML = 'Please enter a valid postcode'
@@ -108,6 +115,6 @@ fetch(fineFree.services)
   })
   .catch(
     error =>
-      (errorMessage.innerHTML =
-        'Sorry, there was an error in loading required data. Please try again later.')
+    (errorMessage.innerHTML =
+      'Sorry, there was an error in loading required data. Please try again later.')
   )
