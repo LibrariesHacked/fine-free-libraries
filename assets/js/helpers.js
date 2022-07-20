@@ -58,10 +58,15 @@ var fineFree = {
     return exampleCost
   },
   getTweetText: function (estimateFamilyWeeklyFine) {
-    if (estimateFamilyWeeklyFine === undefined || estimateFamilyWeeklyFine === null) return this.tweetText.noInformation
+    if (
+      estimateFamilyWeeklyFine === undefined ||
+      estimateFamilyWeeklyFine === null
+    )
+      return this.tweetText.noInformation
     if (estimateFamilyWeeklyFine.total == 0) return this.tweetText.noFines
     if (estimateFamilyWeeklyFine.total < 5) return this.tweetText.smallFines
-    return this.tweetText.largeFines
+    if (estimateFamilyWeeklyFine.total < 8) return this.tweetText.largeFines
+    return this.tweetText.veryLargeFines
   },
   exampleCosts: [
     {
@@ -98,7 +103,7 @@ var fineFree = {
       source: 'https://www.tesco.com/groceries/en-GB/products/256267349'
     },
     {
-      itemCost: 4.00,
+      itemCost: 4.0,
       itemDescription: 'a refill pack for a jar of Kenco instant coffee.',
       source: 'https://www.tesco.com/groceries/en-GB/products/265314701'
     },
@@ -140,9 +145,15 @@ var fineFree = {
         "It's great your library doesn't charge fines. Consider tweeting a thank you to the service, and encourage others to go fine-free.",
       tweetText: 'thank for not charging overdue fines!'
     },
+    veryLargeFines: {
+      tweetIntroduction:
+        'These are very high fine amounts that will severely affect poorer users. Consider tweeting to the service to encourage them to lower fines, or go fine-free.',
+      tweetText:
+        'please consider removing or reducing library fines, which affect poorer users and create a barrier to using libraries.'
+    },
     largeFines: {
       tweetIntroduction:
-        'These are large fines that will severely affect poorer users. Consider tweeting to the service to encourage them to lower fines or go fine-free.',
+        'These are large fines that could particularly affect poorer users. Consider tweeting to the service to encourage them to lower fines, or go fine-free.',
       tweetText:
         'please consider removing or reducing library fines, which affect poorer users and create a barrier to using libraries.'
     },
