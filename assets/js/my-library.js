@@ -75,7 +75,7 @@ function submitPostcode () {
               tweetIntroText.style.display = 'block'
 
               tweetLink.style.display = 'inline'
-              var tweetLinkText = `@${service['Twitter handle']} ${tweetText.tweetText}\n\nvia https://www.finefreelibraries.co.uk`
+              var tweetLinkText = `@${service['Twitter handle']} ${tweetText.tweetText}\n\nvia https://www.finefreelibraries.uk`
               var tweetLinkUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 tweetLinkText
               )} `
