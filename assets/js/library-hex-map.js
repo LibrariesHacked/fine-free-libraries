@@ -20,7 +20,7 @@ allData.then(res => {
         : '#eceff1'
     }
   })
-  hex = new ODI.hexmap(document.getElementById('div-library-hexmap'), {
+  hex = new OI.hexmap(document.getElementById('div-library-hexmap'), {
     label: {
       show: true,
       clip: true,
