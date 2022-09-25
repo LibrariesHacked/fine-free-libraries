@@ -10,14 +10,18 @@ fetch(fineFree.services)
         var adult = service['Adult fine']
         var interval = service['Fine interval']
         var formattedFines = fineFree.formatFines(child, adult, interval)
-        return [service['Name'], formattedFines.child, formattedFines.adult]
+        var familyFine = fineFree.estimateFamilyWeeklyFine(child, adult, interval)
+        return [service['Name'], formattedFines.child, formattedFines.adult, (familyFine ? familyFine.total : 0)]
       })
+
+
     new gridjs.Grid({
-      columns: ['Service', 'Child', 'Adult'],
+      columns: ['Service', 'Child', 'Adult', 'Family est.'],
       pagination: true,
       search: {
         selector: (cell, rowIndex, cellIndex) => (cellIndex === 0 ? cell : null)
       },
+      sort: true,
       data: services
     }).render(document.getElementById('div-table-wrapper'))
   })
