@@ -1,3 +1,5 @@
+var dataLoading = document.getElementById('p-data-loading')
+
 var serviceData = []
 
 fetch(fineFree.services)
@@ -10,15 +12,25 @@ fetch(fineFree.services)
         var adult = service['Adult fine']
         var interval = service['Fine interval']
         var formattedFines = fineFree.formatFines(child, adult, interval)
-        return [service['Name'], formattedFines.child, formattedFines.adult]
+        var familyFine = fineFree.estimateFamilyWeeklyFine(child, adult, interval)
+        return [service['Name'], formattedFines.child, formattedFines.adult, (familyFine ? Math.round(familyFine.total, 2) : 0)]
       })
+
+
     new gridjs.Grid({
-      columns: ['Service', 'Child', 'Adult'],
+      columns: ['Service', 'Child', 'Adult', { 
+        name: 'Family',
+        formatter: (cell) => `£${cell}`
+      }],
       pagination: true,
       search: {
         selector: (cell, rowIndex, cellIndex) => (cellIndex === 0 ? cell : null)
       },
+      sort: true,
       data: services
     }).render(document.getElementById('div-table-wrapper'))
+
+    dataLoading.style.display = 'none'
+
   })
   .catch(error => console.log(error))
