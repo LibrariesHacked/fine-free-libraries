@@ -2,9 +2,9 @@
 title: About
 ---
 
-This site was developed by [Libraries Hacked](https://www.Librarieshacked.org). The code is open source and available on the GitHub repository [Fine free libraries](https://github.com/LibrariesHacked/fine-free-libraries).
+This site was developed by [Libraries Hacked](https://www.Librarieshacked.org). The code is open source and available at [Fine free libraries](https://github.com/LibrariesHacked/fine-free-libraries).
 
-For more information please email [info@librarieshacked.org](mailto:info@librarieshacked.org) or contact [@librarieshacked](https://twitter.com/librarieshacked) on twitter.
+For more information please email [info@librarieshacked.org](mailto:info@librarieshacked.org), or contact [@librarieshacked](https://twitter.com/librarieshacked) on twitter.
 
 Many thanks to:
 
