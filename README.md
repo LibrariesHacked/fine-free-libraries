@@ -22,7 +22,7 @@ See also the list of [contributors](https://github.com/librarieshacked/libraries
 
 Alembic is published under the [MIT Licence](https://github.com/daviddarnes/alembic/blob/main/LICENSE).
 
-Additional site code here is also published under the [MIT Licence](/LICENSE).
+Additional site code here is published under the [MIT Licence](/LICENSE).
 
 ## Acknowledgments
 
