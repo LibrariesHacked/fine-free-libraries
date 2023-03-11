@@ -3,11 +3,13 @@ const fetchServicesData = fetch(fineFree.services).then(res => res.json())
 const allData = Promise.all([fetchHexJson, fetchServicesData])
 const hexMapElement = document.getElementById('div-library-hexmap')
 
+let storedData = null
+
 const buildHexMap = (childOnly = false) => {
 
   hexMapElement.innerHTML = ''
-  var hexdata = res[0]
-  var serviceData = res[1]
+  var hexdata = storedData[0]
+  var serviceData = storedData[1]
 
   Object.keys(hexdata.hexes).forEach(hexCode => {
     var service = serviceData.find(x => x.Code === hexCode)
@@ -42,7 +44,7 @@ const buildHexMap = (childOnly = false) => {
         return fineFreeLibrary ? fineFreeHex : fineHex
       }
     },
-    hexjson: res[0]
+    hexjson: storedData[0]
   })
 
   tippy('#div-library-hexmap .hexmap-inner svg g', {
@@ -71,6 +73,7 @@ const buildHexMap = (childOnly = false) => {
 }
 
 allData.then(res => {
+  storedData = res
   buildHexMap(false);
 
   // Add option to show Child Only Fines
