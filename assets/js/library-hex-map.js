@@ -17,12 +17,13 @@ const buildHexMap = (childOnly = false) => {
       var child = service['Child fine']
       var adult = service['Adult fine']
       var interval = service['Fine interval']
+
+      var fineFreeLibrary = childOnly ? fineFree.isFineFreeForChildren(child) : fineFree.isFineFree(child, adult)
+
       hexdata.hexes[hexCode].child = child
       hexdata.hexes[hexCode].adult = adult
       hexdata.hexes[hexCode].interval = interval
-      hexdata.hexes[hexCode].colour = fineFree.isFineFree(child, adult)
-        ? '#a5d6a7'
-        : '#eceff1'
+      hexdata.hexes[hexCode].colour = fineFreeLibrary ? '#a5d6a7' : '#eceff1'
     }
   })
   new OI.hexmap(hexMapElement, {
