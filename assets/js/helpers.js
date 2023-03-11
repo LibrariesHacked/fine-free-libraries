@@ -5,6 +5,9 @@ var fineFree = {
   isFineFree: function (child, adult) {
     return child == 0 && adult == 0
   },
+  isFineFreeForChildren: function (child,) {
+    return child == 0
+  },
   formatFines: function (child, adult, interval) {
     var childFormatted = 'Unknown'
     var adultFormatted = 'Unknown'

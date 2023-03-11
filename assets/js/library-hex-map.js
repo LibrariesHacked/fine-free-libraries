@@ -1,8 +1,11 @@
 const fetchHexJson = fetch(fineFree.hexJson).then(res => res.json())
 const fetchServicesData = fetch(fineFree.services).then(res => res.json())
 const allData = Promise.all([fetchHexJson, fetchServicesData])
+const hexMapElement = document.getElementById('div-library-hexmap')
 
-allData.then(res => {
+const buildHexMap = (childOnly = false) => {
+
+  hexMapElement.innerHTML = ''
   var hexdata = res[0]
   var serviceData = res[1]
 
@@ -20,7 +23,7 @@ allData.then(res => {
         : '#eceff1'
     }
   })
-  hex = new OI.hexmap(document.getElementById('div-library-hexmap'), {
+  new OI.hexmap(hexMapElement, {
     label: {
       show: true,
       clip: true,
@@ -29,7 +32,7 @@ allData.then(res => {
         var adult = attr.hex.adult
         var interval = attr.hex.interval
         var service = attr.hex.n
-        var fineFreeLibrary = fineFree.isFineFree(child, adult)
+        var fineFreeLibrary = childOnly ? fineFree.isFineFreeForChildren(child) : fineFree.isFineFree(child, adult)
 
         var data_attrs = `data-service="${service}" data-child="${child}" data-adult="${adult}" data-interval="${interval}" data-fine-free="${fineFreeLibrary}"`
 
@@ -64,4 +67,16 @@ allData.then(res => {
   })
 
   document.getElementById('p-data-loading').style.display = 'none'
+
+}
+
+allData.then(res => {
+  buildHexMap(false);
+
+  // Add option to show Child Only Fines
+  var childOnly = document.getElementById('chb-childonly')
+  childOnly.addEventListener('change', function () {
+    buildHexMap(this.checked);
+  });
+  document.getElementById('div-library-hexmap-controls').style.display = 'block'
 })
