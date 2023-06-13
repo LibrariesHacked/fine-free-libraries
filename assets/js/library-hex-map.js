@@ -101,7 +101,7 @@ allData.then(res => {
   })
   Object.keys(storedData[2]).forEach(regionCode => {
     var option = document.createElement('option')
-    option.value = regionCode
+    option.value = storedData[2][regionCode].region
     option.text = storedData[2][regionCode].region
     region.appendChild(option)
   })
