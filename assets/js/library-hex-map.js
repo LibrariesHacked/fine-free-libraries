@@ -14,9 +14,11 @@ const buildHexMap = (region = '', childOnly = false) => {
 
   Object.keys(hexdata.hexes).forEach(hexCode => {
     var service = serviceData.find(x => x.Code === hexCode)
-    var serviceRegion = regions[hexCode].region
+    var serviceRegion = regions[hexCode]
 
-    if (region != '' && region !== serviceRegion) {
+    var serviceRegionName = serviceRegion ? serviceRegion.region : ''
+
+    if (region != '' && region !== serviceRegionName) {
       delete hexdata.hexes[hexCode]
     } else if (service) {
       var child = service['Child fine']
