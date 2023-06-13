@@ -90,11 +90,13 @@ allData.then(res => {
   var childOnly = document.getElementById('chb-childonly')
   var region = document.getElementById('sel-region')
   var regionCode = region.value
-  var childOnlyChecked = childOnlyChecked
+  var childOnlyChecked = childOnly.checked
   childOnly.addEventListener('change', function () {
+    childOnlyChecked = childOnly.checked
     buildHexMap(regionCode, childOnlyChecked)
   })
   region.addEventListener('change', function () {
+    regionCode = region.value
     buildHexMap(regionCode, childOnlyChecked)
   })
   Object.keys(storedData[2]).forEach(regionCode => {
