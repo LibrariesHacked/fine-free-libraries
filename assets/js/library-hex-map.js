@@ -8,7 +8,7 @@ let storedData = null
 
 const buildHexMap = (region = '', childOnly = false) => {
   hexMapElement.innerHTML = ''
-  var hexdata = Object.assign({}, storedData[0])
+  var hexdata = JSON.parse(JSON.stringify(storedData[0]))
   var serviceData = storedData[1]
   var regions = storedData[2]
 
@@ -99,10 +99,17 @@ allData.then(res => {
     regionCode = region.value
     buildHexMap(regionCode, childOnlyChecked)
   })
+  var regionNames = []
   Object.keys(storedData[2]).forEach(regionCode => {
+    if (regionNames.indexOf(storedData[2][regionCode].region) === -1) {
+      regionNames.push(storedData[2][regionCode].region)
+    }
+  })
+  regionNames.sort()
+  regionNames.forEach(regionName => {
     var option = document.createElement('option')
-    option.value = storedData[2][regionCode].region
-    option.text = storedData[2][regionCode].region
+    option.value = regionName
+    option.text = regionName
     region.appendChild(option)
   })
   document.getElementById('div-library-hexmap-controls').style.display = 'block'
