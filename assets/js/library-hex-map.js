@@ -1,24 +1,31 @@
 const fetchHexJson = fetch(fineFree.hexJson).then(res => res.json())
 const fetchServicesData = fetch(fineFree.services).then(res => res.json())
-const allData = Promise.all([fetchHexJson, fetchServicesData])
+const fetchRegionData = fetch(fineFree.regions).then(res => res.json())
+const allData = Promise.all([fetchHexJson, fetchServicesData, fetchRegionData])
 const hexMapElement = document.getElementById('div-library-hexmap')
 
 let storedData = null
 
-const buildHexMap = (childOnly = false) => {
-
+const buildHexMap = (region = '', childOnly = false) => {
   hexMapElement.innerHTML = ''
-  var hexdata = storedData[0]
+  var hexdata = Object.assign({}, storedData[0])
   var serviceData = storedData[1]
+  var regions = storedData[2]
 
   Object.keys(hexdata.hexes).forEach(hexCode => {
     var service = serviceData.find(x => x.Code === hexCode)
-    if (service) {
+    var serviceRegion = regions[hexCode].region
+
+    if (region != '' && region !== serviceRegion) {
+      delete hexdata.hexes[hexCode]
+    } else if (service) {
       var child = service['Child fine']
       var adult = service['Adult fine']
       var interval = service['Fine interval']
 
-      var fineFreeLibrary = childOnly ? fineFree.isFineFreeForChildren(child) : fineFree.isFineFree(child, adult)
+      var fineFreeLibrary = childOnly
+        ? fineFree.isFineFreeForChildren(child)
+        : fineFree.isFineFree(child, adult)
 
       hexdata.hexes[hexCode].child = child
       hexdata.hexes[hexCode].adult = adult
@@ -35,7 +42,9 @@ const buildHexMap = (childOnly = false) => {
         var adult = attr.hex.adult
         var interval = attr.hex.interval
         var service = attr.hex.n
-        var fineFreeLibrary = childOnly ? fineFree.isFineFreeForChildren(child) : fineFree.isFineFree(child, adult)
+        var fineFreeLibrary = childOnly
+          ? fineFree.isFineFreeForChildren(child)
+          : fineFree.isFineFree(child, adult)
 
         var data_attrs = `data-service="${service}" data-child="${child}" data-adult="${adult}" data-interval="${interval}" data-fine-free="${fineFreeLibrary}"`
 
@@ -45,7 +54,7 @@ const buildHexMap = (childOnly = false) => {
         return fineFreeLibrary ? fineFreeHex : fineHex
       }
     },
-    hexjson: storedData[0]
+    hexjson: hexdata
   })
 
   tippy('#div-library-hexmap .hexmap-inner svg g', {
@@ -70,17 +79,29 @@ const buildHexMap = (childOnly = false) => {
   })
 
   document.getElementById('p-data-loading').style.display = 'none'
-
 }
 
 allData.then(res => {
   storedData = res
-  buildHexMap(false);
 
   // Add option to show Child Only Fines
   var childOnly = document.getElementById('chb-childonly')
+  var region = document.getElementById('sel-region')
+  var regionCode = region.value
+  var childOnlyChecked = childOnlyChecked
   childOnly.addEventListener('change', function () {
-    buildHexMap(this.checked);
-  });
+    buildHexMap(regionCode, childOnlyChecked)
+  })
+  region.addEventListener('change', function () {
+    buildHexMap(regionCode, childOnlyChecked)
+  })
+  Object.keys(storedData[2]).forEach(regionCode => {
+    var option = document.createElement('option')
+    option.value = regionCode
+    option.text = storedData[2][regionCode].region
+    region.appendChild(option)
+  })
   document.getElementById('div-library-hexmap-controls').style.display = 'block'
+
+  buildHexMap(regionCode, childOnlyChecked)
 })

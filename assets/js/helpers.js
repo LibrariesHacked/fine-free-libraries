@@ -2,6 +2,7 @@ var fineFree = {
   hexJson: 'https://raw.githubusercontent.com/LibrariesHacked/uk-libraries-hexmap/main/services.hexjson',
   services: 'https://api.librarydata.uk/services/airtable',
   postcodes: 'https://api-geography.librarydata.uk/rest/postcodes',
+  regions: '/assets/data/regions.json',
   isFineFree: function (child, adult) {
     return child == 0 && adult == 0
   },

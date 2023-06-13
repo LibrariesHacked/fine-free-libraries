@@ -1,0 +1,623 @@
+{
+  "E06000001": {
+    "region": "North East"
+  },
+  "E06000002": {
+    "region": "North East"
+  },
+  "E06000003": {
+    "region": "North East"
+  },
+  "E06000004": {
+    "region": "North East"
+  },
+  "E06000005": {
+    "region": "North East"
+  },
+  "E06000006": {
+    "region": "North West"
+  },
+  "E06000007": {
+    "region": "North West"
+  },
+  "E06000008": {
+    "region": "North West"
+  },
+  "E06000009": {
+    "region": "North West"
+  },
+  "E06000010": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E06000011": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E06000012": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E06000013": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E06000014": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E06000015": {
+    "region": "East Midlands"
+  },
+  "E06000016": {
+    "region": "East Midlands"
+  },
+  "E06000017": {
+    "region": "East Midlands"
+  },
+  "E06000018": {
+    "region": "East Midlands"
+  },
+  "E06000019": {
+    "region": "West Midlands"
+  },
+  "E06000020": {
+    "region": "West Midlands"
+  },
+  "E06000021": {
+    "region": "West Midlands"
+  },
+  "E06000022": {
+    "region": "South West"
+  },
+  "E06000023": {
+    "region": "South West"
+  },
+  "E06000024": {
+    "region": "South West"
+  },
+  "E06000025": {
+    "region": "South West"
+  },
+  "E06000026": {
+    "region": "South West"
+  },
+  "E06000027": {
+    "region": "South West"
+  },
+  "E06000030": {
+    "region": "South West"
+  },
+  "E06000031": {
+    "region": "East of England"
+  },
+  "E06000032": {
+    "region": "East of England"
+  },
+  "E06000033": {
+    "region": "East of England"
+  },
+  "E06000034": {
+    "region": "East of England"
+  },
+  "E06000035": {
+    "region": "South East"
+  },
+  "E06000036": {
+    "region": "South East"
+  },
+  "E06000037": {
+    "region": "South East"
+  },
+  "E06000038": {
+    "region": "South East"
+  },
+  "E06000039": {
+    "region": "South East"
+  },
+  "E06000040": {
+    "region": "South East"
+  },
+  "E06000041": {
+    "region": "South East"
+  },
+  "E06000042": {
+    "region": "South East"
+  },
+  "E06000043": {
+    "region": "South East"
+  },
+  "E06000044": {
+    "region": "South East"
+  },
+  "E06000045": {
+    "region": "South East"
+  },
+  "E06000046": {
+    "region": "South East"
+  },
+  "E06000047": {
+    "region": "North East"
+  },
+  "E06000049": {
+    "region": "North West"
+  },
+  "E06000050": {
+    "region": "North West"
+  },
+  "E06000051": {
+    "region": "West Midlands"
+  },
+  "E06000052": {
+    "region": "South West"
+  },
+  "E06000053": {
+    "region": "South West"
+  },
+  "E06000054": {
+    "region": "South West"
+  },
+  "E06000055": {
+    "region": "East of England"
+  },
+  "E06000056": {
+    "region": "East of England"
+  },
+  "E06000057": {
+    "region": "North East"
+  },
+  "E06000058": {
+    "region": "South West"
+  },
+  "E06000059": {
+    "region": "South West"
+  },
+  "E06000060": {
+    "region": "South East"
+  },
+  "E06000061": {
+    "region": "East Midlands"
+  },
+  "E06000062": {
+    "region": "East Midlands"
+  },
+  "E06000063": {
+    "region": "North West"
+  },
+  "E06000064": {
+    "region": "North West"
+  },
+  "E06000065": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E06000066": {
+    "region": "South West"
+  },
+  "E08000001": {
+    "region": "North West"
+  },
+  "E08000002": {
+    "region": "North West"
+  },
+  "E08000003": {
+    "region": "North West"
+  },
+  "E08000004": {
+    "region": "North West"
+  },
+  "E08000005": {
+    "region": "North West"
+  },
+  "E08000006": {
+    "region": "North West"
+  },
+  "E08000007": {
+    "region": "North West"
+  },
+  "E08000008": {
+    "region": "North West"
+  },
+  "E08000009": {
+    "region": "North West"
+  },
+  "E08000010": {
+    "region": "North West"
+  },
+  "E08000011": {
+    "region": "North West"
+  },
+  "E08000012": {
+    "region": "North West"
+  },
+  "E08000013": {
+    "region": "North West"
+  },
+  "E08000014": {
+    "region": "North West"
+  },
+  "E08000015": {
+    "region": "North West"
+  },
+  "E08000016": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000017": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000018": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000019": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000021": {
+    "region": "North East"
+  },
+  "E08000022": {
+    "region": "North East"
+  },
+  "E08000023": {
+    "region": "North East"
+  },
+  "E08000024": {
+    "region": "North East"
+  },
+  "E08000025": {
+    "region": "West Midlands"
+  },
+  "E08000026": {
+    "region": "West Midlands"
+  },
+  "E08000027": {
+    "region": "West Midlands"
+  },
+  "E08000028": {
+    "region": "West Midlands"
+  },
+  "E08000029": {
+    "region": "West Midlands"
+  },
+  "E08000030": {
+    "region": "West Midlands"
+  },
+  "E08000031": {
+    "region": "West Midlands"
+  },
+  "E08000032": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000033": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000034": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000035": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000036": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E08000037": {
+    "region": "North East"
+  },
+  "E09000001": {
+    "region": "London"
+  },
+  "E09000002": {
+    "region": "London"
+  },
+  "E09000003": {
+    "region": "London"
+  },
+  "E09000004": {
+    "region": "London"
+  },
+  "E09000005": {
+    "region": "London"
+  },
+  "E09000006": {
+    "region": "London"
+  },
+  "E09000007": {
+    "region": "London"
+  },
+  "E09000008": {
+    "region": "London"
+  },
+  "E09000009": {
+    "region": "London"
+  },
+  "E09000010": {
+    "region": "London"
+  },
+  "E09000011": {
+    "region": "London"
+  },
+  "E09000012": {
+    "region": "London"
+  },
+  "E09000013": {
+    "region": "London"
+  },
+  "E09000014": {
+    "region": "London"
+  },
+  "E09000015": {
+    "region": "London"
+  },
+  "E09000016": {
+    "region": "London"
+  },
+  "E09000017": {
+    "region": "London"
+  },
+  "E09000018": {
+    "region": "London"
+  },
+  "E09000019": {
+    "region": "London"
+  },
+  "E09000020": {
+    "region": "London"
+  },
+  "E09000021": {
+    "region": "London"
+  },
+  "E09000022": {
+    "region": "London"
+  },
+  "E09000023": {
+    "region": "London"
+  },
+  "E09000024": {
+    "region": "London"
+  },
+  "E09000025": {
+    "region": "London"
+  },
+  "E09000026": {
+    "region": "London"
+  },
+  "E09000027": {
+    "region": "London"
+  },
+  "E09000028": {
+    "region": "London"
+  },
+  "E09000029": {
+    "region": "London"
+  },
+  "E09000030": {
+    "region": "London"
+  },
+  "E09000031": {
+    "region": "London"
+  },
+  "E09000032": {
+    "region": "London"
+  },
+  "E09000033": {
+    "region": "London"
+  },
+  "E10000003": {
+    "region": "East of England"
+  },
+  "E10000007": {
+    "region": "West Midlands"
+  },
+  "E10000008": {
+    "region": "South West"
+  },
+  "E10000011": {
+    "region": "South East"
+  },
+  "E10000012": {
+    "region": "East of England"
+  },
+  "E10000013": {
+    "region": "South West"
+  },
+  "E10000014": {
+    "region": "South East"
+  },
+  "E10000015": {
+    "region": "East of England"
+  },
+  "E10000016": {
+    "region": "South East"
+  },
+  "E10000017": {
+    "region": "North West"
+  },
+  "E10000018": {
+    "region": "East Midlands"
+  },
+  "E10000019": {
+    "region": "Yorkshire and The Humber"
+  },
+  "E10000020": {
+    "region": "East of England"
+  },
+  "E10000024": {
+    "region": "East Midlands"
+  },
+  "E10000025": {
+    "region": "South East"
+  },
+  "E10000028": {
+    "region": "West Midlands"
+  },
+  "E10000029": {
+    "region": "East of England"
+  },
+  "E10000030": {
+    "region": "South East"
+  },
+  "E10000031": {
+    "region": "West Midlands"
+  },
+  "E10000032": {
+    "region": "South East"
+  },
+  "E10000034": {
+    "region": "West Midlands"
+  },
+  "S12000005": {
+    "region": "Scotland"
+  },
+  "S12000006": {
+    "region": "Scotland"
+  },
+  "S12000008": {
+    "region": "Scotland"
+  },
+  "S12000010": {
+    "region": "Scotland"
+  },
+  "S12000011": {
+    "region": "Scotland"
+  },
+  "S12000013": {
+    "region": "Scotland"
+  },
+  "S12000014": {
+    "region": "Scotland"
+  },
+  "S12000017": {
+    "region": "Scotland"
+  },
+  "S12000018": {
+    "region": "Scotland"
+  },
+  "S12000019": {
+    "region": "Scotland"
+  },
+  "S12000020": {
+    "region": "Scotland"
+  },
+  "S12000021": {
+    "region": "Scotland"
+  },
+  "S12000023": {
+    "region": "Scotland"
+  },
+  "S12000026": {
+    "region": "Scotland"
+  },
+  "S12000027": {
+    "region": "Scotland"
+  },
+  "S12000028": {
+    "region": "Scotland"
+  },
+  "S12000029": {
+    "region": "Scotland"
+  },
+  "S12000030": {
+    "region": "Scotland"
+  },
+  "S12000033": {
+    "region": "Scotland"
+  },
+  "S12000034": {
+    "region": "Scotland"
+  },
+  "S12000035": {
+    "region": "Scotland"
+  },
+  "S12000036": {
+    "region": "Scotland"
+  },
+  "S12000038": {
+    "region": "Scotland"
+  },
+  "S12000039": {
+    "region": "Scotland"
+  },
+  "S12000040": {
+    "region": "Scotland"
+  },
+  "S12000041": {
+    "region": "Scotland"
+  },
+  "S12000042": {
+    "region": "Scotland"
+  },
+  "S12000045": {
+    "region": "Scotland"
+  },
+  "S12000047": {
+    "region": "Scotland"
+  },
+  "S12000048": {
+    "region": "Scotland"
+  },
+  "S12000049": {
+    "region": "Scotland"
+  },
+  "S12000050": {
+    "region": "Scotland"
+  },
+  "W06000001": {
+    "region": "Wales"
+  },
+  "W06000002": {
+    "region": "Wales"
+  },
+  "W06000003": {
+    "region": "Wales"
+  },
+  "W06000004": {
+    "region": "Wales"
+  },
+  "W06000005": {
+    "region": "Wales"
+  },
+  "W06000006": {
+    "region": "Wales"
+  },
+  "W06000008": {
+    "region": "Wales"
+  },
+  "W06000009": {
+    "region": "Wales"
+  },
+  "W06000010": {
+    "region": "Wales"
+  },
+  "W06000011": {
+    "region": "Wales"
+  },
+  "W06000012": {
+    "region": "Wales"
+  },
+  "W06000013": {
+    "region": "Wales"
+  },
+  "W06000014": {
+    "region": "Wales"
+  },
+  "W06000015": {
+    "region": "Wales"
+  },
+  "W06000016": {
+    "region": "Wales"
+  },
+  "W06000018": {
+    "region": "Wales"
+  },
+  "W06000019": {
+    "region": "Wales"
+  },
+  "W06000020": {
+    "region": "Wales"
+  },
+  "W06000021": {
+    "region": "Wales"
+  },
+  "W06000022": {
+    "region": "Wales"
+  },
+  "W06000023": {
+    "region": "Wales"
+  },
+  "W06000024": {
+    "region": "Wales"
+  }
+}

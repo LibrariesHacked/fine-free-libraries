@@ -1,10 +1,19 @@
 <p id="p-data-loading">Please wait while data loads...</p>
 <div id="div-library-hexmap"></div>
 <div id="div-library-hexmap-controls">
-    <input type="checkbox" id="chb-childonly" name="childonly" value="Child Only">
-    <label for="chb-childonly">Display child fines only</label>
+  <input
+    type="checkbox"
+    id="chb-childonly"
+    name="childonly"
+    value="Child Only"
+  />
+  <label for="chb-childonly">View by fines for children</label>
+  <br />
+  <label for="sel-region">Choose a region</label>
+  <select name="sel-region" id="sel-region">
+    <option value=""></option>
+  </select>
 </div>
-
 
 <script src="https://unpkg.com/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
