@@ -4,13 +4,13 @@ A website promoting fine free libraries in the UK
 
 ## Deployment
 
-The project is enabled using GitHub pages. Github should automatically deploy and build the site. The site is built with a remote Jekyll theme.
+The project is deployed using GitHub pages. Github should automatically build and then deploy the site on any changes made to the main branch. The site is built with a remote Jekyll theme.
 
 ## Built With
 
 - [Jekyll](https://jekyllrb.com/) - The web framework used for creating static sites
 - [Alembic](https://alembic.darn.es/) - Remote Jekyll theme
-- [Open Innovation's Hexmap library](https://open-innovations.github.io/oi.hexmap.js/) - Remote Jekyll theme
+- [Open Innovation's Hexmap library](https://open-innovations.github.io/oi.hexmap.js/) - The JS library used to display the hex map.
 
 ## Authors
 
