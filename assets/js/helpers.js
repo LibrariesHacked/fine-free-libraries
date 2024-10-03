@@ -1,6 +1,6 @@
 var fineFree = {
   hexJson:
-    'https://raw.githubusercontent.com/LibrariesHacked/uk-libraries-hexmap/main/ul-utla-2023.hexjson',
+    'https://raw.githubusercontent.com/LibrariesHacked/uk-libraries-hexmap/main/uk-utla-2023.hexjson',
   services: 'https://api.librarydata.uk/services/airtable',
   postcodes: 'https://api-geography.librarydata.uk/rest/postcodes',
   regions: '/assets/data/regions.json',
