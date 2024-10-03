@@ -1,12 +1,13 @@
 var fineFree = {
-  hexJson: 'https://raw.githubusercontent.com/LibrariesHacked/uk-libraries-hexmap/main/services.hexjson',
+  hexJson:
+    'https://raw.githubusercontent.com/LibrariesHacked/uk-libraries-hexmap/main/ul-utla-2023.hexjson',
   services: 'https://api.librarydata.uk/services/airtable',
   postcodes: 'https://api-geography.librarydata.uk/rest/postcodes',
   regions: '/assets/data/regions.json',
   isFineFree: function (child, adult) {
     return child == 0 && adult == 0
   },
-  isFineFreeForChildren: function (child,) {
+  isFineFreeForChildren: function (child) {
     return child == 0
   },
   formatFines: function (child, adult, interval) {
