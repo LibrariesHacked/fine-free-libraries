@@ -27,7 +27,6 @@ const buildHexMap = (region = '', childOnly = false, displayCost = false) => {
     if (!isNaN(fineNumber)) {
       // If the interval is per week divide the amount by 7
       if (interval === 'Week') fineNumber = fineNumber / 7
-      if (fineNumber < minFine) minFine = fineNumber
       if (fineNumber > maxFine) maxFine = fineNumber
     }
   })
@@ -67,8 +66,8 @@ const buildHexMap = (region = '', childOnly = false, displayCost = false) => {
             ((fineNumber - minFine) / (maxFine - minFine)) * 4
           )
           hexdata.hexes[hexCode].colour = fineFreeLibrary
-            ? '#a5d6a7'
-            : colours[colourIndex - 1]
+            ? '#eceff1'
+            : colours[colourIndex]
         }
       } else {
         hexdata.hexes[hexCode].colour = fineFreeLibrary ? '#a5d6a7' : '#eceff1'
