@@ -90,7 +90,7 @@ const buildHexMap = (region = '', childOnly = false, displayCost = false) => {
         var data_attrs = `data-service="${service}" data-child="${child}" data-adult="${adult}" data-interval="${interval}" data-fine-free="${fineFreeLibrary}"`
 
         var fineFreeHex = `<tspan ${data_attrs} class="hexdata fine-free">&check;</tspan>`
-        var fineHex = `<tspan ${data_attrs} class="hexdata fine-paid">&cross;</tspan>`
+        var fineHex = `<tspan ${data_attrs} class="hexdata fine-paid"></tspan>`
 
         return fineFreeLibrary ? fineFreeHex : fineHex
       }
